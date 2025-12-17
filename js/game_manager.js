@@ -64,15 +64,21 @@ GameManager.prototype.addRandomTile = function () {
     this.tileCount++;
 
 // Determine phase: every 20 tiles = one full cycle
-    var cyclePosition = this.tileCount % 20;
+    var cyclePosition = this.tileCount % 30;
 
 // High randomness: first 10 tiles of cycle
     var prob2;
 
-    if (cyclePosition > 10) {
-      prob2 = 0.5;   // high randomness
+    if (cyclePosition < 10) {
+  // First 10 tiles: always 2
+      prob2 = 0.95;
+    } else if (cyclePosition < 20) {
+  // Next 10 tiles: always 4
+      prob2 = 0.05;
+
     } else {
-      prob2 = 0.95;  // low randomness
+  // Last 10 tiles: random
+    prob2 = 0.5;
     }
 
 // Decide tile value

@@ -25,7 +25,7 @@
     el.style.marginTop = "8px";
     el.style.fontSize = "16px";
     el.style.fontWeight = "600";
-    el.textContent = "Next move in: 5.0s";
+    el.textContent = "Next auto move in 下一次自动移动: 5.0s";
 
     const anchor = document.querySelector(".scores-container");
     if (anchor && anchor.parentNode) {
